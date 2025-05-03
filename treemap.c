@@ -154,19 +154,15 @@ Pair * upperBound(TreeMap * tree, void* key) {
             ub_node = aux;
             primer--;
         }
-        else if(tree->lower_than(aux->pair->key, ub_node->pair->key) == 1 &&
+        else if(tree->lower_than(ub_node->pair->key, aux->pair->key) == 1 &&
                 tree->lower_than(aux->pair->key, key) == 1){
                     ub_node = aux;
                 }
 
 
-        //if (tree->lower_than(key, aux->pair->key))
-        //    aux = aux->left;
-        //else aux = aux->right;
-        if (tree->lower_than(key, aux->pair->key) == 0)
-            aux = aux->right;
-        else if (tree->lower_than(key, aux->pair->key) == 1)
+        if (tree->lower_than(key, aux->pair->key))
             aux = aux->left;
+        else aux = aux->right;
     }
     return ub_node->pair;
 }
