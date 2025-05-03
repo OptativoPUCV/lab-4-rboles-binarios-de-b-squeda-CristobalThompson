@@ -149,11 +149,13 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 //0 es izq mayor a der, 1 contrario
 Pair * nextTreeMap(TreeMap * tree) {
-    if (tree->current->right != NULL)
+    TreeNode* aux = tree->current;
+    if (aux->right != NULL)
         tree->current = minimum(tree->current->right);
-    else while(tree->lower_than(tree->current->parent, tree->current) == 0) {
+    else {
+        while(aux->parent != NULL && aux == aux->parent->right) {
         tree->current = tree->current->parent;
-        break;
+        }
     }
 
     return tree->current->pair;
