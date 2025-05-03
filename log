@@ -148,3 +148,39 @@ C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-sq
 C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-squeda-CristobalThompson/treemap.c:105: undefined reference to `lower_than'
 collect2.exe: error: ld returned 1 exit status
 5042331
+Fri, May  2, 2025 10:01:03 PM: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'insertTreeMap':
+treemap.c:51:29: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   51 |     if (aux == NULL) return NULL;
+      |                             ^~~~
+treemap.c:49:6: note: declared here
+   49 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+treemap.c: In function 'searchTreeMap':
+treemap.c:103:34: warning: passing argument 1 of 'tree->lower_than' makes pointer from integer without a cast [-Wint-conversion]
+  103 |         if (tree->lower_than(key > aux->pair->key) == 0 && aux->right != NULL)
+      |                              ~~~~^~~~~~~~~~~~~~~~
+      |                                  |
+      |                                  int
+treemap.c:103:34: note: expected 'void *' but argument is of type 'int'
+treemap.c:103:13: error: too few arguments to function 'tree->lower_than'
+  103 |         if (tree->lower_than(key > aux->pair->key) == 0 && aux->right != NULL)
+      |             ^~~~
+treemap.c:105:39: warning: passing argument 1 of 'tree->lower_than' makes pointer from integer without a cast [-Wint-conversion]
+  105 |         else if (tree->lower_than(key < aux->pair->key) == 1 && aux->left != NULL)
+      |                                   ~~~~^~~~~~~~~~~~~~~~
+      |                                       |
+      |                                       int
+treemap.c:105:39: note: expected 'void *' but argument is of type 'int'
+treemap.c:105:18: error: too few arguments to function 'tree->lower_than'
+  105 |         else if (tree->lower_than(key < aux->pair->key) == 1 && aux->left != NULL)
+      |                  ^~~~
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+a97e09c
