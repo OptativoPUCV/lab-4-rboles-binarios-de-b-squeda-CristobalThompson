@@ -77,7 +77,7 @@ TreeNode * minimum(TreeNode * x){
     return x;
 }
 
-//0 es izq mayor a der, 1 contrario
+
 void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode* aux = node;
     TreeNode* parent = node->parent;
@@ -147,7 +147,11 @@ Pair * firstTreeMap(TreeMap * tree) {
     return (minimum(tree->root))->pair;
 }
 
+//0 es izq mayor a der, 1 contrario
 Pair * nextTreeMap(TreeMap * tree) {
-    tree->current = minimum(tree->current->parent->right);
+    if (tree->current->right != NULL)
+        tree->current = minimum(tree->current->right);
+    else while(tree->lower_than(tree->current, tree->current->parent)) 
+        tree->current = tree->current->parent;
     return tree->current->pair;
 }
