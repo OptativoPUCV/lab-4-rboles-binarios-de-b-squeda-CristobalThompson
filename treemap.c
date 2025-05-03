@@ -154,8 +154,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
             ub_node = aux;
             primer = 0;
         }
-        else if(tree->lower_than(aux->pair->key, ub_node->pair->key) &&
-                tree->lower_than(aux->pair->key, key)){
+        else if(tree->lower_than(aux->pair->key, ub_node->pair->key) == 1 &&
+                tree->lower_than(aux->pair->key, key) == 1){
                     ub_node = aux;
                 }
 
