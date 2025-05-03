@@ -123,3 +123,28 @@ Fri, May  2, 2025  9:58:54 PM:
  tests:  6|7
 total_score: 5/70
 886dcf4
+Fri, May  2, 2025 10:00:27 PM: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'insertTreeMap':
+treemap.c:51:29: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   51 |     if (aux == NULL) return NULL;
+      |                             ^~~~
+treemap.c:49:6: note: declared here
+   49 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+treemap.c: In function 'searchTreeMap':
+treemap.c:103:13: warning: implicit declaration of function 'lower_than' [-Wimplicit-function-declaration]
+  103 |         if (lower_than(key > aux->pair->key) == 0 && aux->right != NULL)
+      |             ^~~~~~~~~~
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\crist\AppData\Local\Temp\ccAWVhmI.o: in function `searchTreeMap':
+C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-squeda-CristobalThompson/treemap.c:103: undefined reference to `lower_than'
+C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-squeda-CristobalThompson/treemap.c:105: undefined reference to `lower_than'
+collect2.exe: error: ld returned 1 exit status
+5042331

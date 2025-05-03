@@ -100,9 +100,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             tree->current = aux;
             return aux->pair;
         }
-        if ((key > aux->pair->key) && aux->right != NULL)
+        if (lower_than(key > aux->pair->key) == 0 && aux->right != NULL)
             aux = aux->right;
-        else if ((key < aux->pair->key)&& aux->left != NULL)
+        else if (lower_than(key < aux->pair->key) == 1 && aux->left != NULL)
             aux = aux->left;
         else return NULL;
     }
