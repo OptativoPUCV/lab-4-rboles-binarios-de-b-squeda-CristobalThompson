@@ -53,7 +53,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         if (is_equal(tree, key, aux->pair->key)){
             return;
         }
-        if ((int) key > (int) aux->pair->key){
+        if ( key > aux->pair->key){
             aux->right = createTreeNode(key, value);
             return;
         }
@@ -63,9 +63,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
             return;
         }
 
-        if ((int)key > (int)aux->pair->key && aux->right != NULL)
+        if (key > aux->pair->key && aux->right != NULL)
             aux = aux->right;
-        else if ((int)key < (int)aux->pair->key && aux->left != NULL)
+        else if (key < aux->pair->key && aux->left != NULL)
             aux = aux->left;
     }
 }
