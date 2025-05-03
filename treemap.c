@@ -142,12 +142,17 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 //1 si izq menor a der
 Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode* aux = tree->root; 
-    TreeNode* ub_node = tree->root;
+    TreeNode* ub_node;
+    int primer = 1;
     if (aux == NULL) return NULL;
     while(aux != NULL){
         if (is_equal(tree, key, aux->pair->key)){
             tree->current = aux;
             return aux->pair;
+        }
+        else if (primer){
+            ub_node = aux;
+            primer = 0;
         }
         else if(tree->lower_than(aux->pair->key, ub_node->pair->key) &&
                 tree->lower_than(key, aux->pair->key)){
