@@ -142,26 +142,18 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 //1 si izq menor a der
 Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode* aux = tree->root; 
-    TreeNode* ub_node;
-    int primer = 1;
+    TreeNode* ub_node = NULL;
     if (aux == NULL) return NULL;
     while(aux != NULL){
         if (is_equal(tree, key, aux->pair->key)){
             tree->current = aux;
             return aux->pair;
         }
-        else if (primer){
+
+        if (tree->lower_than(key, aux->pair->key)){
             ub_node = aux;
-            primer--;
-        }
-        else if(tree->lower_than(ub_node->pair->key, aux->pair->key) == 1 &&
-                tree->lower_than(aux->pair->key, key) == 1){
-                    ub_node = aux;
-                }
-
-
-        if (tree->lower_than(key, aux->pair->key))
             aux = aux->left;
+        }
         else aux = aux->right;
     }
     return ub_node->pair;
