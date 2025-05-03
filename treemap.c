@@ -152,7 +152,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
         else if (primer){
             ub_node = aux;
-            primer = 0;
+            primer--;
         }
         else if(tree->lower_than(aux->pair->key, ub_node->pair->key) == 1 &&
                 tree->lower_than(aux->pair->key, key) == 1){
@@ -160,9 +160,13 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 }
 
 
-        if (tree->lower_than(key, aux->pair->key))
+        //if (tree->lower_than(key, aux->pair->key))
+        //    aux = aux->left;
+        //else aux = aux->right;
+        if (tree->lower_than(key, aux->pair->key) == 0)
+            aux = aux->right;
+        else if (tree->lower_than(key, aux->pair->key) == 1)
             aux = aux->left;
-        else aux = aux->right;
     }
     return ub_node->pair;
 }
