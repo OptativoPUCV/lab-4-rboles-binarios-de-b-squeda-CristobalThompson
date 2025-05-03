@@ -407,3 +407,8 @@ C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-sq
 C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-squeda-CristobalThompson/treemap.c:152: undefined reference to `lower_than'
 collect2.exe: error: ld returned 1 exit status
 328670b
+Sat, May  3, 2025  1:04:54 PM: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+c7d28cf
