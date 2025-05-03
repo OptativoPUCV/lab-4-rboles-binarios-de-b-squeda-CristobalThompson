@@ -141,7 +141,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 //0 es izq mayor a der
 //1 si izq menor a der
 Pair * upperBound(TreeMap * tree, void* key) {
-    TreeNode* aux, ub_node = tree->root;
+    TreeNode* aux, *ub_node = tree->root;
     if (aux == NULL) return NULL;
     while(aux != NULL){
         if (is_equal(tree, key, aux->pair->key)){

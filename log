@@ -380,3 +380,30 @@ treemap.c:162:1: warning: control reaches end of non-void function [-Wreturn-typ
   162 | }
       | ^
 81b054b
+Sat, May  3, 2025  1:04:09 PM: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'upperBound':
+treemap.c:151:17: warning: implicit declaration of function 'lower_than' [-Wimplicit-function-declaration]
+  151 |         else if(lower_than(aux->pair->key, ub_node->pair->key) &&
+      |                 ^~~~~~~~~~
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+In file included from test.c:4:
+treemap.c: In function 'searchTreeMap':
+treemap.c:139:1: warning: control reaches end of non-void function [-Wreturn-type]
+  139 | }
+      | ^
+test.c: In function 'upperBound':
+treemap.c:145:8: warning: 'aux' is used uninitialized in this function [-Wuninitialized]
+  145 |     if (aux == NULL) return NULL;
+      |        ^
+C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\crist\AppData\Local\Temp\ccdcfKdo.o: in function `upperBound':
+C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-squeda-CristobalThompson/treemap.c:151: undefined reference to `lower_than'
+C:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\crist\Desktop\codigos\estructura de datos\lab-4-rboles-binarios-de-b-squeda-CristobalThompson/treemap.c:152: undefined reference to `lower_than'
+collect2.exe: error: ld returned 1 exit status
+328670b
